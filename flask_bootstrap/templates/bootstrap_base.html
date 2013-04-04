@@ -2,7 +2,7 @@
 <html{% block html_attribs %} lang="en"{% endblock html_attribs %}>
 {%- block html %}
   <head>
-  {%- block head %}
+  {%- block boilerplate_head %}
     <meta charset="utf-8">
     <title>{% block title %}{{title}}{% endblock title %}</title>
     {%- block meta %}
@@ -11,7 +11,7 @@
     <meta name="author" content="">
     {%- endblock meta %}
 
-    {%- block style %}
+    {%- block boilerplate_style %}
     {%- if not config['BOOTSTRAP_CUSTOM_CSS'] %}
     <link href="{{'css/bootstrap.css'|bootstrap_find_resource}}" rel="stylesheet">
     {%- endif %}
@@ -21,14 +21,7 @@
     <link rel="stylesheet" href="{{'css/font-awesome-ie7.css'|bootstrap_find_resource(use_minified=True, cdn='fontawesome')}}">
     <![endif]-->
     {%- endif %}
-    {%- block style_navbar_padding %}
-    <style>
-      body {
-        padding-top: 60px;
-      }
-    </style>
-    {%- endblock style_navbar_padding %}
-    {%- endblock style %}
+    {%- endblock boilerplate_style %}
 
     {%- if config['BOOTSTRAP_HTML5_SHIM'] %}
     {%- block bootstrap_html5_shim %}
@@ -43,11 +36,15 @@
     {%- block favicons %}
     {%- endblock favicons %}
 
+  {%- endblock boilerplate_head %}
+  {%- block head %}
+      {%- block style %}
+      {%- endblock style %}
   {%- endblock head %}
   </head>
 
   <body>
-  {%- block body %}
+  {%- block boilderplate_body %}
     {%- block body_content %}
     {%- endblock body_content %}
     {%- block bootstrap_js_bottom %}
@@ -58,7 +55,8 @@
     {%- endif %}
     <script src="{{'js/bootstrap.js'|bootstrap_find_resource}}"></script>
     {%- endblock bootstrap_js_bottom %}
-
+    {%- block body_js_bottom %}
+    {%- endblock body_js_bottom %}
     {%- if config['BOOTSTRAP_GOOGLE_ANALYTICS_ACCOUNT'] %}
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -72,7 +70,7 @@
       })();
     </script>
     {%- endif %}
-  {%- endblock body %}
+  {%- endblock boilderplate_body %}
   </body>
   {%- if config['BOOTSTRAP_FONTAWESOME'] %}
   <!-- Font Awesome is licensed CC-BY-3.0: http://fortawesome.github.com/Font-Awesome -->
