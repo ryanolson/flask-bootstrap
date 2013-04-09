@@ -11,7 +11,7 @@
     <meta name="author" content="">
     {%- endblock meta %}
 
-    {%- block boilerplate_style %}
+    {%- block bootstrap_style %}
     {%- if not config['BOOTSTRAP_CUSTOM_CSS'] %}
     <link href="{{'css/bootstrap.css'|bootstrap_find_resource}}" rel="stylesheet">
     {%- endif %}
@@ -21,7 +21,12 @@
     <link rel="stylesheet" href="{{'css/font-awesome-ie7.css'|bootstrap_find_resource(use_minified=True, cdn='fontawesome')}}">
     <![endif]-->
     {%- endif %}
-    {%- endblock boilerplate_style %}
+    {%- endblock bootstrap_style %}
+
+    {%- block style %}
+    {%- endblock style %}
+    {%- block style_responsive %}
+    {%- endblock style_responsive %}
 
     {%- if config['BOOTSTRAP_HTML5_SHIM'] %}
     {%- block bootstrap_html5_shim %}
@@ -37,13 +42,9 @@
     {%- endblock favicons %}
 
   {%- endblock boilerplate_head %}
-  {%- block head %}
-      {%- block style %}
-      {%- endblock style %}
-  {%- endblock head %}
   </head>
 
-  <body>
+  <body {% block body_options %}{% endblock %}>
   {%- block boilderplate_body %}
     {%- block body_content %}
     {%- endblock body_content %}
