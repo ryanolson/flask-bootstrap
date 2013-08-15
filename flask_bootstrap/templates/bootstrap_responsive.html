@@ -1,9 +1,0 @@
-{% extends "bootstrap_base.html" %}
-{%- block bootstrap_style -%}
-{{super()}}
-{%- if not config['BOOTSTRAP_CUSTOM_CSS'] %}
-    {%- block bootstrap_style_before_responsive %}
-    {%- endblock bootstrap_style_before_responsive %}
-    <link href="{{'css/bootstrap-responsive.css'|bootstrap_find_resource}}" rel="stylesheet">
-{%- endif %}
-{%- endblock bootstrap_style %}
