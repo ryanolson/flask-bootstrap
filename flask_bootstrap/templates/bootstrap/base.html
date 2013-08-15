@@ -12,7 +12,8 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     {% block favicon %}
-    <link rel="Shortcut Icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/x-icon">
+    <link rel="Shortcut Icon" href="{{ url_for('bootstrap.static', filename='favicon.png') }}" type="image/x-icon">
+
     {% endblock %}
 
     {% block css %}
@@ -77,20 +78,8 @@
         <div id="push"></div>
     </div>
 
-    <footer id="footer">
-        {% block footer %}
-        <ul class="footer-links">
-            <li>© 2013</li>
-            <li><a href='#'>About</a></li>
-            <li class="muted">&middot;</li>
-            <li><a href='#'>Help</a></li>
-            <li class="muted">&middot;</li>
-            <li><a href='#'>Terms</a></li>
-            <li class="muted">&middot;</li>
-            <li><a href='#'>Blog</a></li>
-        </ul>
-        {% endblock %}
-    </footer>
+    {% block footer %}
+    {% endblock %}
 
     {% block js_btm %}
     <script src="{{ url_for('static', filename='bootstrap/js/jquery.min.js') }}"></script>
