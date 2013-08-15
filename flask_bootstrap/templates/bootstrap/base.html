@@ -17,16 +17,16 @@
     {% endblock %}
 
     {% block css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('bootstrap.static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('bootstrap.static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('bootstrap.static', filename='css/font-awesome.min.css') }}">
     {% endblock %}
 
     {% block css_style %}
     {% endblock %}
 
     {% block js_top %}
-    <script src="{{ url_for('static', filename='bootstrap/js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+    <script src="{{ url_for('bootstrap.static', filename='js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
     {% endblock %}
 </head>
 <body>
@@ -82,9 +82,9 @@
     {% endblock %}
 
     {% block js_btm %}
-    <script src="{{ url_for('static', filename='bootstrap/js/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='bootstrap/js/plugins.js') }}"></script>
-    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('bootstrap.static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('bootstrap.static', filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('bootstrap.static', filename='js/bootstrap.min.js') }}"></script>
     {% endblock %}
 
     {% block google_analytics %}
