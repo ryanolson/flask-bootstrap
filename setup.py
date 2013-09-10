@@ -2,20 +2,10 @@ import os
 
 from setuptools import setup
 
-
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
-
-
 setup(
     name='Flask-Bootstrap',
-    version='2.3.2.10',
+    version='2.3.2.11',
     license='BSD',
-    author='Marc Brinkmann.de',
-    author_email='git@marcbrinkmann.de',
-    description='An extension that includes Twitter\'s Bootstrap in your '
-                'project, without any boilerplate code.',
-    long_description=read('README.rst'),
     packages=['flask_bootstrap'],
     zip_safe=False,
     include_package_data=True,
