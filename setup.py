@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Flask-Bootstrap',
-    version='2.3.2.11',
+    version='2.3.2.12',
     license='BSD',
     packages=find_packages(),
     zip_safe=False,
